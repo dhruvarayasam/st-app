@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+*{
+    box-sizing: border-box;
+}
+a{
+    cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    color: white;
+    background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div.greeting-blob {
+    margin:20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h4.greeting-subheading {
+    color:rgb(200, 200, 200);
+    padding-left:5px;
 }
 
-.App-link {
-  color: #61dafb;
+div.navbar {
+    background-color: black;
+    margin: 0;
+    padding:10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button.nav-button {
+    font-size: 20px;
+    margin:0;
+    padding:15px;
+    background-color:black;
+    color:white;
+    border:none;
+    float:right;
+    font-family:Georgia;
+}
+
+button.nav-button:hover {
+    background-color:white;
+    color:black;
+
+}
+
+img {
+    height:87px;
+    width:120px;
+    padding:0;
+}
+
+div.landing-page-heading {
+    background-color: rgb(73, 73, 73);
+    padding:20px;
+    text-align: center;
+}
+
+div.landing-page-spread {
+    width:100%;
+    display:flex;
+    text-align:center;
+    flex-wrap:wrap;
+
+}
+
+div.landing-page-spread > * {
+    width: calc(100%/3)
+}
+
+input[type=text], [type=number], [type=password], select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input.account-input[type=text] {
+    color:white;
+    background-color: black;
+}
+
+input.account-input[type=password] {
+    color:white;
+    background-color: black;
+}
+
+div.login {
+    width:fit-content;
+    border-radius: 5px;
+    text-align: center;
+    background-color: grey;
+    padding:20px;
+    
+}
+
+div.order-blob > * {
+    margin:20px;
+    border-style:solid;
+    border-radius: 10px;;
+}
+
+div.order-form > * {
+    margin:10px;
+}
+
+div.order-history {
+    padding:5px;
+}
+
+div.order-history > * {
+    margin:10px;
+    margin-right:0;
+}
+
+
+
+div.data-window {
+    display:flex;
+}
+
+div.chart {
+    width: 75%;
+}
+
+div.data-window-options {
+    width:25%
+}
+
+div.data-plus-order {
+    display:flex;
+}
+
+div.portfolio-hist-component {
+    width:90%;
+}
+
+div.order-component {
+    width:30%;
+}
+
+ul.data-window-options {
+    list-style-type: none;
+}
+
+button.window-options {
+    margin:10px;
+    background-color: black;
+    color:white;
+    border-style: solid;
+    border-color: white;
+    border-radius:5px;
+    padding:10px;
+}
+
+button.window-options:hover {
+    background-color: white;
+    color:black;
 }

@@ -352,6 +352,10 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
     // GET requests
 
+    app.get('/', (req, res) => {
+        return res.status(200).json({mssg: 'hello'})
+    })
+
     app.get('/profile', (req, res) => { // access profile data
 
         const { token } = req.cookies;

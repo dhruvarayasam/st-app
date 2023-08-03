@@ -19,7 +19,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "proxy":"https://st-app-backend.vercel.app",
+  "proxy":"https://st-app-one.vercel.app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

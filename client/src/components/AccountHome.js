@@ -1,13 +1,11 @@
 
-import { useContext, useEffect, useState, useCallback } from 'react';
+import { useContext, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { AlpacaAuthStatus } from '../contexts/AlpacaAuthStatus';
-import { Navigate, Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import 'react-dropdown/style.css';
 import PortfolioHistory from './PortfolioHistory';
 import AlpacaAuthForm from './AlpacaAuthForm';
-import GetFavs from './GetFavs';
-import AddToFavs from './AddToFavs';
 import OrderComponent from './OrderComponent';
 // how it works:
 // APCAAuthStatus is set false by default

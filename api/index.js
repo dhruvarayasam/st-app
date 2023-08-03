@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const Alpaca = require('@alpacahq/alpaca-trade-api')
 
 
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: process.env.CORS_URL }));
 app.use(express.json())
 app.use(cookieParser())
 mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
@@ -384,6 +384,8 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
         }
 
         const user = await User.findById(id)
+
+        console.log(user)
 
         if (!user) {
             return res.status(404).json({ mssg: 'user not found buddy' })

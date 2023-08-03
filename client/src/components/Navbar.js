@@ -10,7 +10,7 @@ export default function Navbar() {
     const [redirect, setRedirect] = useState(false)
 
     useEffect(() => {
-        fetch("http://localhost:4000/profile", {
+        fetch(process.env.REACT_APP_DOMAIN_URL+"/profile", {
             credentials: 'include'
         }).then(response => {
 
@@ -23,7 +23,7 @@ export default function Navbar() {
 
     function logout() {
 
-        fetch("http://localhost:4000/logout", {
+        fetch(process.env.REACT_APP_DOMAIN_URL+"/logout", {
             credentials: 'include',
             method: 'POST'
         });

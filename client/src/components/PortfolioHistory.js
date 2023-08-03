@@ -19,7 +19,7 @@ export default function PortfolioHistory() {
 
     const fetchPortfolioData = useCallback(async () => {
 
-        await fetch("http://localhost:4000/getperformance/" + userInfo.id).then(async (res) => {
+        await fetch(process.env.REACT_APP_DOMAIN_URL+"/getperformance/" + userInfo.id).then(async (res) => {
 
             const jsonData = await res.json()
 

@@ -1,3 +1,4 @@
+
 import { useContext, useEffect, useState, useCallback } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { AlpacaAuthStatus } from '../contexts/AlpacaAuthStatus';
@@ -8,7 +9,6 @@ import AlpacaAuthForm from './AlpacaAuthForm';
 import GetFavs from './GetFavs';
 import AddToFavs from './AddToFavs';
 import OrderComponent from './OrderComponent';
-
 // how it works:
 // APCAAuthStatus is set false by default
 // checkAPCAAuthStatus is run: fetches from Mongo whether user has valid APCA credentials
@@ -21,14 +21,15 @@ import OrderComponent from './OrderComponent';
 
 export default function AccountHome() {
 
+    console.log(process.env)
+
     const { userInfo } = useContext(UserContext);
     const { APCA_AUTH_STATUS, setAPCA_AUTH_STATUS } = useContext(AlpacaAuthStatus)
-
 
     useEffect(() => { // update auth status every time component reloads
         if (userInfo !== null && userInfo.id !== undefined) {
 
-            fetch('http://localhost:4000/checkAPCACreds/' + userInfo.id).then((response) => {
+            fetch(process.env.REACT_APP_DOMAIN_URL+'/checkAPCACreds/' + userInfo.id).then((response) => {
 
                 response.json().then((data) => {
 

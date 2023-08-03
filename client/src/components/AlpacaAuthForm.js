@@ -19,7 +19,7 @@ export default function AlpacaAuthForm() {
 
         ev.preventDefault();
 
-        const response = await fetch("http://localhost:4000/submitAPCAcreds/" + userInfo.id, {
+        const response = await fetch(process.env.REACT_APP_DOMAIN_URL+"/submitAPCAcreds/" + userInfo.id, {
 
             method: "PATCH",
             body: JSON.stringify({ APCA_API_KEY, APCA_SECRET_KEY }),

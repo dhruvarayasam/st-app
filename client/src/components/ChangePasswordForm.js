@@ -23,7 +23,7 @@ export default function ChangePasswordForm() {
 
         if (userInfo !== undefined) {
 
-            const response = await fetch("http://localhost:4000/changepassword/" + userInfo.id, {
+            const response = await fetch(process.env.REACT_APP_DOMAIN_URL+"/changepassword/" + userInfo.id, {
                 method: "PATCH",
                 body: JSON.stringify({ newPassword }),
                 headers: { 'Content-Type': 'application/json' },

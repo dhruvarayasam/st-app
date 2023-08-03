@@ -16,7 +16,7 @@ export default function AddToFavs() {
 
         if (userInfo.id !== undefined) {
 
-            await fetch("http://localhost:4000/addtofavs/" + userInfo.id, {
+            await fetch(process.env.REACT_APP_DOMAIN_URL+"/addtofavs/" + userInfo.id, {
                 method: "POST",
                 body: JSON.stringify({ ticker }),
                 headers: { 'Content-Type': 'application/json' },

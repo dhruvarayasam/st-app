@@ -21,7 +21,7 @@ export default function OrderComponent() {
 
     const fetchRecentOrderData = useCallback(async () => {
 
-        await fetch("http://localhost:4000/getrecentorders/" + userInfo.id).then(async (res) => {
+        await fetch(process.env.REACT_APP_DOMAIN_URL+"/getrecentorders/" + userInfo.id).then(async (res) => {
 
             const jsonData = await res.json()
 
@@ -47,7 +47,7 @@ export default function OrderComponent() {
     async function handleSubmit(ev) {
         ev.preventDefault()
 
-        const response = await fetch("http://localhost:4000/submitorder/"+userInfo.id, {
+        const response = await fetch(process.env.REACT_APP_DOMAIN_URL+"/submitorder/"+userInfo.id, {
             method:"POST",
             body: JSON.stringify(inputInfo),
             headers: {'Content-Type':'application/json'},

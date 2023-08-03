@@ -23,6 +23,8 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
         const { username, password } = req.body;
 
+        console.log(username)
+
         const userDoc = await User.findOne({ username })
 
         if (!userDoc) {

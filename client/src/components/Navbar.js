@@ -11,7 +11,7 @@ export default function Navbar() {
 
     useEffect(() => {
         fetch(process.env.REACT_APP_DOMAIN_URL+"/profile", {
-            credentials: 'same-origin'
+            credentials: 'include'
         }).then(response => {
 
             response.json().then(userInfo => {

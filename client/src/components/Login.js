@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import {Navigate} from 'react-router-dom'
 import { UserContext } from '../contexts/UserContext';
 
@@ -7,6 +7,8 @@ export default function Login () {
     const [username, setUsername] = useState('');
 
     const[password, setPassword] = useState('');
+
+    const [redirect, setRedirect] = useState(false)
 
     const {setUserInfo} = useContext(UserContext)
 
@@ -26,8 +28,7 @@ export default function Login () {
             response.json().then(userInfo => {
 
                 setUserInfo(userInfo)
-
-                return (<Navigate to={'/'} />)
+                setRedirect(true)
 
             })
 
@@ -37,6 +38,10 @@ export default function Login () {
 
         }
 
+    }
+
+    if (redirect) {
+        return (<Navigate to={'/accounthome'} />)
     }
 
     return (

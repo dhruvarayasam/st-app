@@ -362,6 +362,8 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
         const { token } = req.cookies;
 
+        console.log(req.cookies)
+
         if (token) {
             jwt.verify(token, secret, {}, (err, info) => {
                 if (err) throw err;

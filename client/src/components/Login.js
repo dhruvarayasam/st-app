@@ -8,8 +8,6 @@ export default function Login () {
 
     const[password, setPassword] = useState('');
 
-    const [redirect, setRedirect] = useState(false)
-
     const {setUserInfo} = useContext(UserContext)
 
     async function loginSubmit(ev) {
@@ -29,7 +27,7 @@ export default function Login () {
 
                 setUserInfo(userInfo)
 
-                setRedirect(true);
+                return (<Navigate to={'/'} />)
 
             })
 
@@ -38,12 +36,6 @@ export default function Login () {
             alert('wrong credentials')
 
         }
-
-    }
-
-    if (redirect) {
-
-        return (<Navigate to={'/'} />)
 
     }
 

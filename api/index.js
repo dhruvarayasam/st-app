@@ -366,7 +366,9 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
         if (token) {
             jwt.verify(token, secret, {}, (err, info) => {
-                if (err) throw err;
+                if (err) {
+                    return res.status(400).json({'mssg':err})
+                }
 
                 res.status(200).json(info);
             })

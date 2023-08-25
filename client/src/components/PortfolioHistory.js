@@ -119,7 +119,7 @@ export default function PortfolioHistory() {
 
         if (userInfo.id !== undefined) {
 
-            await fetch(process.env.REACT_APP_DOMAIN_URL+"/addtofavs/" + userInfo.id, {
+            await fetch("http://localhost:4000/addtofavs/" + userInfo.id, {
                 method: "POST",
                 body: JSON.stringify({ ticker }),
                 headers: { 'Content-Type': 'application/json' },
@@ -143,7 +143,7 @@ export default function PortfolioHistory() {
 
         const tick = ev.target.value
 
-        await fetch(process.env.REACT_APP_DOMAIN_URL+"/deletefromfavs/"+userInfo.id+"/"+tick, {
+        await fetch("http://localhost:4000/deletefromfavs/"+userInfo.id+"/"+tick, {
             method: "DELETE"
         }).then((res) => {
             getFavsList()
@@ -168,7 +168,7 @@ export default function PortfolioHistory() {
 
         setLoadedStatus(false)
 
-        await fetch(process.env.REACT_APP_DOMAIN_URL + "/getcompanydata/"+ticker+"/"+userInfo.id).then(async (res) => {
+        await fetch("http://localhost:4000/getcompanydata/"+ticker+"/"+userInfo.id).then(async (res) => {
             // handle data
 
             // handle data

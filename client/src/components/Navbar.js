@@ -15,7 +15,8 @@ export default function Navbar() {
         fetch(process.env.REACT_APP_DOMAIN_URL+"/profile", {
             method: 'POST',
             body: JSON.stringify({'token':Cookies.get('token')}),
-            headers: {'Content-Type':'application/json'}
+            headers: {'Content-Type':'application/json'},
+            credentials: 'include'
         }).then(response => {
 
             response.json().then(userInfo => {

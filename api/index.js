@@ -362,7 +362,7 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
     app.post('/profile', (req, res) => { // access profile data
 
-        console.log(req.body)
+        console.log(req.cookies)
 
         const { token } = req.cookies;
 

@@ -39,7 +39,7 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
             jwt.sign({ username, id: userDoc._id }, secret, {}, (err, token) => {
                 if (err) throw err;
-                res.status(200).cookie('token', token, {sameSite: 'none', Secure:true}).json({
+                res.status(200).cookie('token', token, {sameSite: 'none', secure:true}).json({
                     id: userDoc._id,
                     username,
                 })

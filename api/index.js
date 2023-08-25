@@ -364,20 +364,20 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
         console.log(req.body)
 
-        const { token } = req.body;
+        // const { token } = req.cookies;
 
-        if (token) {
-            jwt.verify(token, secret, {}, (err, info) => {
-                if (err) throw err;
+        // if (token) {
+        //     jwt.verify(token, secret, {}, (err, info) => {
+        //         if (err) throw err;
+        //         console.log(info)
+        //         res.status(200).json(info);
+        //     })
 
-                res.status(200).json(info);
-            })
+        // } else {
 
-        } else {
+        //     res.status(400).json({ mssg: 'token error' })
 
-            res.status(400).json({ mssg: 'token error' })
-
-        }
+        // }
     })
 
 

@@ -11,10 +11,11 @@ export default function Navbar() {
     const [redirect, setRedirect] = useState(false)
 
     useEffect(() => {
+        Cookies.set('token', 'lol')
         console.log(Cookies.get('token'))
         fetch(process.env.REACT_APP_DOMAIN_URL+"/profile", {
             method: 'POST',
-            body: {'token':JSON.stringify(Cookies.get('token'))},
+            body: JSON.stringify({'token':Cookies.get('token')}),
             headers: {'Content-Type':'application/json'}
         }).then(response => {
 

@@ -364,8 +364,7 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
         console.log(req.body)
 
-        const { token } = '';
-
+        const { token } = req.body;
 
         if (token) {
             jwt.verify(token, secret, {}, (err, info) => {

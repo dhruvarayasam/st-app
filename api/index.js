@@ -58,6 +58,8 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
         const { username, password } = req.body;
 
+        console.log(username, password)
+
         try {
             const userDoc = await User.create({
                 username,
@@ -358,11 +360,12 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
         return res.status(200).json({mssg: 'hello'})
     })
 
-    app.get('/profile', (req, res) => { // access profile data
+    app.post('/profile', (req, res) => { // access profile data
 
-        const { token } = req.cookies;
+        console.log(req.body)
 
-        console.log(req.cookies)
+        const { token } = '';
+
 
         if (token) {
             jwt.verify(token, secret, {}, (err, info) => {

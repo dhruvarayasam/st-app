@@ -47,7 +47,7 @@ export default function PortfolioHistory() {
 
         if (userInfo.id !== undefined) {
 
-            await fetch("http://localhost:4000/getfavs/" + userInfo.id).then(async (res) => {
+            await fetch(process.env.REACT_APP_DOMAIN_URL+"/getfavs/" + userInfo.id).then(async (res) => {
 
                 const jsonData = await res.json()
 

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext"
 import logo from "../styles/logo.jpg"
@@ -9,17 +9,20 @@ export default function Navbar() {
 
     const [redirect, setRedirect] = useState(false)
 
-    useEffect(() => {
-        fetch(process.env.REACT_APP_DOMAIN_URL+"/profile", {
-            credentials: 'same-origin'
-        }).then(response => {
+    // useEffect(() => {
+    //     console.log(Cookies.get('token'))
+    //     fetch(process.env.REACT_APP_DOMAIN_URL+"/profile", {
+    //         method: 'POST',
+    //         body: {'token':JSON.stringify(Cookies.get('token'))},
+    //         headers: {'Content-Type':'application/json'}
+    //     }).then(response => {
 
-            response.json().then(userInfo => {
-                setUserInfo(userInfo)
-            }).catch((err) => console.log(err))
+    //         response.json().then(userInfo => {
+    //             setUserInfo(userInfo)
+    //         }).catch((err) => console.log(err))
 
-        })
-    }, [setUserInfo])
+    //     })
+    // }, [setUserInfo])
 
     function logout() {
 

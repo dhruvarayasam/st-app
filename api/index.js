@@ -12,7 +12,7 @@ const Alpaca = require('@alpacahq/alpaca-trade-api')
 
 app.use(cors({ credentials: true, origin: process.env.CORS_URL }));
 app.use(express.json())
-app.use(cookieParser())
+app.use(express.cookieParser())
 mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
     const salt = bcrypt.genSaltSync(10)

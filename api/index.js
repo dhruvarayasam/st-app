@@ -76,7 +76,7 @@ mongoose.connect(process.env.MONG_CONNECTION_STR).then(() => {
 
     app.post('/logout', (req, res) => {
 
-        res.cookie('token', '').json('ok')
+        res.status(200).cookie('token', '').json('ok')
 
     })
 

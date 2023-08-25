@@ -1,12 +1,12 @@
 import Navbar from "./Navbar";
 
-
+console.log('hit')
 
 export default function Landing() {
     return (
         <div>
-            <div className="landing-page-content">
             <Navbar />
+            <div className="landing-page-content">
 
                 <div className="landing-page-heading">
                     <h2>AN INNOVATIVE NEW TRADING PLATFORM</h2>

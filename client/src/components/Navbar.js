@@ -11,7 +11,6 @@ export default function Navbar() {
     const [redirect, setRedirect] = useState(false)
 
     useEffect(() => {
-        console.log(Cookies.get('token'))
         fetch(process.env.REACT_APP_DOMAIN_URL+"/profile", {
             method: 'POST',
             body: JSON.stringify({'token':Cookies.get('token')}),
@@ -34,13 +33,10 @@ export default function Navbar() {
         });
 
         setUserInfo({})
-        setRedirect(true)
-
-    }
-
-    if (redirect) {
         return (<Navigate to={'/'} />)
+
     }
+
 
     const username = userInfo?.username;
 
